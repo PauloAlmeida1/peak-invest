@@ -41,7 +41,12 @@ namespace peak_invest
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors(option =>
+            {
+                option.AllowAnyOrigin();
+                option.AllowAnyHeader();
+                option.AllowAnyMethod();
+            });
             app.UseAuthorization();
 
             app.UseSwagger();
